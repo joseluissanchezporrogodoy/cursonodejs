@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="JavaScriptLibraryMappings">
+    <file url="file://$PROJECT_DIR$/ejemplo_npm" libraries="{cursonode/ejemplo_npm/node_modules}" />
+    <file url="file://$PROJECT_DIR$/express_app_basica" libraries="{cursonode/express_app_basica/node_modules}" />
+    <file url="file://$PROJECT_DIR$/express_generator/generada" libraries="{cursonode/express_generator/generada/node_modules}" />
+    <file url="file://$PROJECT_DIR$/version_modulo" libraries="{cursonode/version_modulo/node_modules}" />
+  </component>
+</project>
