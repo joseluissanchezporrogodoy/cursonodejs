@@ -8,7 +8,7 @@ var bodyParser = require('body-parser');
 
 var app = express();
 require('./lib/connectMongoose');
-
+require('./models/Agente');
 
 // view engine setup
 app.set('views', path.join(__dirname, 'views'));
@@ -31,6 +31,7 @@ app.use('/',       require('./routes/index'));
 
 app.use('/cliente',require('./routes/cliente'));
 
+app.use('/apiv1/agentes',require('./routes/apiv1/agentes'));
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {
   var err = new Error('Not Found');
@@ -46,7 +47,18 @@ app.use(function(err, req, res, next) {
 
   // render the error page
   res.status(err.status || 500);
+  if(isAPI(req)){
+    res.json({ok: false, error:err.message});
+    return;
+  }
   res.render('error');
 });
 
 module.exports = app;
+
+
+// para devolver errores en JSON
+function isAPI(req) {
+
+    return req.originalUrl.indexOf('/api') === 0;
+}

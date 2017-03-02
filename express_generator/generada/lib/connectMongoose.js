@@ -1,6 +1,7 @@
 /**
  * Created by joseluissanchez-porrogodoy on 26/02/2017.
  */
+//Este es el módulo de conexión
 "use strict";
 
 var mongoose = require('mongoose');
